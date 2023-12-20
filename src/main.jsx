@@ -10,6 +10,9 @@ import Home from './Components/Home';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import FeedBack from './Components/FeedBack';
+import Authenticate from './Components/Authenticate';
+import Register from './Components/Register';
+import Signin from './Components/Signin';
 
 const router = createBrowserRouter([
   {
@@ -32,12 +35,22 @@ const router = createBrowserRouter([
         path: "/feedback",
         element: <FeedBack></FeedBack>,
       },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/signin",
+        element: <Signin></Signin>,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Authenticate>
+      <RouterProvider router={router} />
+    </Authenticate>
   </React.StrictMode>
 );

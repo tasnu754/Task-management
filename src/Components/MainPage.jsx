@@ -1,10 +1,14 @@
 import { Outlet } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const MainPage = () => {
     return (
-        <div>
-            <Outlet></Outlet>
-        </div>
+      <div>
+        <Navbar></Navbar>
+        <Outlet></Outlet>
+        <Footer></Footer>
+      </div>
     );
 };
 

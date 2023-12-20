@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
@@ -19,9 +20,11 @@ const Banner = () => {
                 Effortless Task Mastery: Unleashing the Power of Task Management
                 System
               </p>
-              <button className="btn btn-accent font-bold text-lg">
-                Let`s Explore
-              </button>
+              <Link to='/signin'>
+                <button className="btn btn-accent font-bold text-lg">
+                  Let`s Explore
+                </button>
+              </Link>
             </div>
           </div>
         </div>

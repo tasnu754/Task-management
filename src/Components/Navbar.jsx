@@ -1,16 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Navigate, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { AuthProvider } from "./Authenticate";
+import { useContext } from "react";
 
 
 const Navbar = () => {
 
-    //   const { user, logout } = useContext(AuthProvider);
+  const { user, logout } = useContext(AuthProvider);
+  const navigate = useNavigate();
 
-    //   const handleSignout = () => {
-    //     logout()
-    //       .then(() => {})
-    //       .catch((error) => console.log(error));
-    //   };
+      const handleSignout = () => {
+        logout()
+          .then(() => {
+            navigate('/')
+          })
+          .catch((error) => console.log(error));
+      };
 
       const links = (
         <>
@@ -54,7 +59,7 @@ const Navbar = () => {
               Feedback
             </NavLink>{" "}
           </li>
-          {/* {user && ( */}
+          {user && (
           <>
             
             <li>
@@ -69,7 +74,7 @@ const Navbar = () => {
             </li>
            
           </>
-          {/* )} */}
+          )}
           <li>
             <NavLink
               to="/register"
@@ -134,7 +139,7 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-            {/* <div className="flex  md:navbar-end">
+            <div className="flex  md:navbar-end">
               {user ? (
                 <div className="flex-row-reverse justify-center md:flex-row flex md:justify-between items-center gap-2 md:gap-4">
                   <p className=" text-xl inline">{user.displayName}</p>
@@ -162,7 +167,7 @@ const Navbar = () => {
                   </button>
                 </NavLink>
               )}
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

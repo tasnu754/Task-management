@@ -16,7 +16,7 @@ const Footer = () => {
                   href="#"
                   aria-label="Brand"
                 >
-                  Social Event
+                  Task Management
                 </a>
               </div>
               {/* End Col */}
