@@ -9,10 +9,11 @@ const ViewTask = () => {
     const taskData = useLoaderData();
     const tasks = taskData.data;
     const [finaltasks, setFinalTasks] = useState(tasks);
+    console.log(finaltasks , "iaoskhdfgoi");
 
     // const handleUpdate = (id) => {
     //        axios
-    //          .put(`http://localhost:5000/task/update${id}`, updatetask)
+    //          .put(`https://task-managment-server-ten.vercel.app/task/update${id}`, updatetask)
     //          .then((response) => {
     //            console.log(response.data);
     //            if (response.data.modifiedCount > 0) {
@@ -34,7 +35,7 @@ const ViewTask = () => {
            .then((willDelete) => {
              if (willDelete) {
                axios
-                 .delete(`http://localhost:5000/task/delete/${id}`)
+                 .delete(`https://task-managment-server-ten.vercel.app/task/delete/${id}`)
                  .then((res) => {
                    console.log(res);
                    if (res.data.deletedCount > 0) {
@@ -89,7 +90,7 @@ const ViewTask = () => {
                   </td>
                   <td>
                     <button
-                      onClick={() => handleUpdate(task._id)}
+                    //   onClick={() => handleUpdate(task._id)}
                       className="hover:bg-gray-300 hover:text-gray-700 hover:rounded-md p-6"
                     >
                       <FaEdit className="text-xl"></FaEdit>

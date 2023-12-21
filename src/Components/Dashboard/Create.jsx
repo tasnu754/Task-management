@@ -19,7 +19,7 @@ const Create = () => {
       form.reset();
 
         axios
-          .post("http://localhost:5000/addTask", task)
+          .post("https://task-managment-server-ten.vercel.app/addTask", task)
           .then((response) => {
             console.log(response.data);
             if (response.data.insertedId) {

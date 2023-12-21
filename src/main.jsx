@@ -70,7 +70,7 @@ const router = createBrowserRouter([
       {
         path: "viewTask",
         element: <ViewTask></ViewTask>,
-        loader: () => axios("http://localhost:5000/tasks"),
+        loader: () => axios("https://task-managment-server-ten.vercel.app/tasks"),
       },
     ],
   },
