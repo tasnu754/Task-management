@@ -5,6 +5,8 @@ import MenuItem from "../MenuItem";
 import { FaTasks } from "react-icons/fa";
 import { IoIosCreate } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
+import { IoMdMenu } from "react-icons/io";
+
 
 
 const Sidebar = () => {
@@ -27,7 +29,7 @@ const Sidebar = () => {
         <div className=" bg-gray-100 text-gray-800 flex justify-between md:hidden">
           <div>
             <div className="block cursor-pointer p-4 font-bold text-xl text-yellow-800">
-              Desdiny Duos
+              Task Management
             </div>
           </div>
 
@@ -35,7 +37,7 @@ const Sidebar = () => {
             onClick={handleToggle}
             className="p-4 focus:outline-none focus:bg-gray-200"
           >
-            {/* <IoMdMenu className="h-5 w-5"></IoMdMenu> */}
+            <IoMdMenu className="h-5 w-5"></IoMdMenu>
           </button>
         </div>
 
@@ -46,20 +48,21 @@ const Sidebar = () => {
           }  md:translate-x-0 transition duration-200 ease-in-out `}
         >
           <div>
+           
             <MenuItem
               label="Your Profile"
               address="profile"
               icon={CgProfile}
             ></MenuItem>
             <MenuItem
-              label="Create/Edit Task"
+              label="Create Task"
               address="editTask"
               icon={IoIosCreate}
             ></MenuItem>
 
             <MenuItem
               label="View Tasks"
-              address="viewTasks"
+              address="viewTask"
               icon={FaTasks}
             ></MenuItem>
           </div>

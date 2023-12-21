@@ -6,7 +6,7 @@ import { AuthProvider } from "./Authenticate";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthProvider);
-  console.log(user, "private");
+  // console.log(user, "private");
 
   if (loading) {
     //   return <span className="loading loading-spinner text-success"></span>;

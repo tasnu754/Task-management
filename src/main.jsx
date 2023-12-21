@@ -15,9 +15,10 @@ import Register from './Components/Register';
 import Signin from './Components/Signin';
 import Dashboard from './Components/Dashboard/Dashboard';
 import PrivateRoute from './Components/PrivateRoute';
-import CreateTask from './Components/CreateTask';
-import Profile from './Components/Profile';
-import ViewTasks from './Components/ViewTasks';
+import Profile from './Components/Dashboard/Profile';
+import Create from './Components/Dashboard/Create';
+import ViewTask from './Components/Dashboard/ViewTask';
+import axios from 'axios';
 
 const router = createBrowserRouter([
   {
@@ -51,7 +52,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "dashboard",
+    path: "/dashboard",
     element: (
       <PrivateRoute>
         <Dashboard></Dashboard>
@@ -64,11 +65,12 @@ const router = createBrowserRouter([
       },
       {
         path: "editTask",
-        element: <CreateTask></CreateTask>,
+        element: <Create></Create>,
       },
       {
-        path: "viewTasks",
-        element:<ViewTasks></ViewTasks>,
+        path: "viewTask",
+        element: <ViewTask></ViewTask>,
+        loader: () => axios("http://localhost:5000/tasks"),
       },
     ],
   },
