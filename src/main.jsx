@@ -13,6 +13,11 @@ import FeedBack from './Components/FeedBack';
 import Authenticate from './Components/Authenticate';
 import Register from './Components/Register';
 import Signin from './Components/Signin';
+import Dashboard from './Components/Dashboard/Dashboard';
+import PrivateRoute from './Components/PrivateRoute';
+import CreateTask from './Components/CreateTask';
+import Profile from './Components/Profile';
+import ViewTasks from './Components/ViewTasks';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +47,28 @@ const router = createBrowserRouter([
       {
         path: "/signin",
         element: <Signin></Signin>,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoute>
+        <Dashboard></Dashboard>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "profile",
+        element: <Profile></Profile>,
+      },
+      {
+        path: "editTask",
+        element: <CreateTask></CreateTask>,
+      },
+      {
+        path: "viewTasks",
+        element:<ViewTasks></ViewTasks>,
       },
     ],
   },

@@ -1,6 +1,6 @@
 
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { AuthProvider } from "./Authenticate";
@@ -9,7 +9,8 @@ import { AuthProvider } from "./Authenticate";
 const Signin = () => {
      
   const { login, goggleLogin } = useContext(AuthProvider);
-  const [error, setError] = useState(null);
+    const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     const handlesignin = (e) => {
         setError(null);
@@ -25,6 +26,7 @@ const Signin = () => {
           const user = res.user;
           console.log(user);
           form.reset();
+          navigate('/')
          
         })
         .catch((error) => {
@@ -36,7 +38,8 @@ const Signin = () => {
   const handleGoogle = () => {
     goggleLogin()
       .then((result) => {
-        console.log(result.user);
+          console.log(result.user);
+           navigate("/");
       })
       .catch((error) => {
         setError(error.message);

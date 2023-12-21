@@ -1,0 +1,32 @@
+[
+    {
+      "title": "Project Kickoff Meeting",
+      "description": "Organize and conduct the project kickoff meeting with the team.",
+      "deadline": "2023-01-15",
+      "priority": "High"
+    },
+    {
+      "title": "Client Proposal",
+      "description": "Prepare and send the proposal to the client for approval.",
+      "deadline": "2023-01-20",
+      "priority": "Moderate"
+    },
+    {
+      "title": "Website Redesign",
+      "description": "Initiate the redesign of the company website, focusing on user experience.",
+      "deadline": "2023-02-05T18:00:00",
+      "priority": "High"
+    },
+    {
+      "title": "Quarterly Report",
+      "description": "Compile and analyze data for the quarterly report presentation.",
+      "deadline": "2023-02-28",
+      "priority": "Moderate"
+    },
+    {
+      "title": "Team Building Activity",
+      "description": "Plan and organize a team-building activity for the department.",
+      "deadline": "2023-03-10",
+      "priority": "Low"
+    }
+  ]

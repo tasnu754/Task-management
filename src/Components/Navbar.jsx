@@ -1,4 +1,4 @@
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AuthProvider } from "./Authenticate";
 import { useContext } from "react";
@@ -64,7 +64,7 @@ const Navbar = () => {
             
             <li>
               <NavLink
-                to="/dashboard"
+                to="dashboard"
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "active" : ""
                 }
